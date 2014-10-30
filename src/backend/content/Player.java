@@ -4,7 +4,6 @@ import java.awt.Point;
 import java.io.Serializable;
 
 import backend.Cardinal;
-import backend.Game;
 import backend.State;
 
 public class Player extends Content implements Serializable {
