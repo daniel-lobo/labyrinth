@@ -5,7 +5,6 @@ import java.io.Serializable;
 
 import backend.Cardinal;
 import backend.ContentOperations;
-import backend.Game;
 import backend.cell.FireBox;
 
 
