@@ -5,6 +5,7 @@ import java.io.Serializable;
 
 import backend.Cardinal;
 import backend.ContentOperations;
+import backend.Game;
 import backend.cell.FireBox;
 
 
@@ -21,20 +22,20 @@ public class Box extends Content implements Serializable {
 
 	public boolean move(Point boxActualPlace, Cardinal cardinal) throws PositionOutOfBoundsException {
 		
-		Point boxNextPlace = this.getGame().SetPositionCardinal(boxActualPlace, cardinal);
+		Point boxNextPlace = Game.getInstance().SetPositionCardinal(boxActualPlace, cardinal);
 		
-		if (this.getGame().validPosition(boxNextPlace)) {
-			if (this.getGame().getCell(boxNextPlace) instanceof ContentOperations && ((ContentOperations) this.getGame().getCell(boxNextPlace)).getContent() == null) {
-				if (this.getGame().getCell(boxNextPlace).setContent(this, boxNextPlace, cardinal)) {
-					if (((ContentOperations) this.getGame().getCell(boxActualPlace)).getContent() != null) {
-						((ContentOperations) this.getGame().getCell(boxActualPlace)).getContent().setPosition(cardinal);
-						((ContentOperations) this.getGame().getCell(boxActualPlace)).removeContent();
+		if (Game.getInstance().validPosition(boxNextPlace)) {
+			if (Game.getInstance().getCell(boxNextPlace) instanceof ContentOperations && ((ContentOperations) Game.getInstance().getCell(boxNextPlace)).getContent() == null) {
+				if (Game.getInstance().getCell(boxNextPlace).setContent(this, boxNextPlace, cardinal)) {
+					if (((ContentOperations) Game.getInstance().getCell(boxActualPlace)).getContent() != null) {
+						((ContentOperations) Game.getInstance().getCell(boxActualPlace)).getContent().setPosition(cardinal);
+						((ContentOperations) Game.getInstance().getCell(boxActualPlace)).removeContent();
 						return true;
 					}
 					return true;
 				}
 
-			} else if (((ContentOperations)(this.getGame().getCell(boxActualPlace))).getContent() == null) {
+			} else if (((ContentOperations)(Game.getInstance().getCell(boxActualPlace))).getContent() == null) {
 				return true;
 			}
 		}
@@ -47,7 +48,7 @@ public class Box extends Content implements Serializable {
 	}
 
 	public void react(Point boxActualPlace){
-		getGame().putCell(new FireBox(), boxActualPlace);
+		Game.getInstance().putCell(new FireBox(), boxActualPlace);
 	}
 
 	public boolean interuptorReact() {

@@ -4,6 +4,7 @@ import java.awt.Point;
 import java.io.Serializable;
 
 import backend.Cardinal;
+import backend.Game;
 import backend.State;
 
 public class Player extends Content implements Serializable {
@@ -15,7 +16,7 @@ public class Player extends Content implements Serializable {
 	}
 
 	public boolean remove() {
-		this.getGame().setState(State.LOSE);
+		Game.getInstance().setState(State.LOSE);
 		return false;
 	}
 

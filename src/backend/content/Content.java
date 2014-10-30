@@ -11,15 +11,13 @@ public abstract class Content implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private final Point position;
-	private final Game game;
 
 	public Content(Point point) {
 		this.position = point;
-		this.game = Game.getInstance();
 	}
 
 	public void setPosition(Cardinal direction) {
-		if ((game.validPosition(position))) {
+		if ((Game.getInstance().validPosition(position))) {
 			position.x += direction.getDirX();
 			position.y += direction.getDirY();
 		}
@@ -28,10 +26,6 @@ public abstract class Content implements Serializable {
 	public abstract boolean move(Point actualPlace, Cardinal cardinal);
 
 	public abstract boolean remove();
-
-	public Game getGame() {
-		return game;
-	}
 
 	public Point getPosition() {
 		return position;

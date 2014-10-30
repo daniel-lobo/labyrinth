@@ -5,6 +5,7 @@ import java.io.Serializable;
 
 
 import backend.Cardinal;
+import backend.Game;
 import backend.State;
 import backend.content.Content;
 import backend.content.Player;
@@ -24,13 +25,13 @@ public class Target extends Floor implements Serializable {
 			throws PositionOutOfBoundsException {
 		Boolean ableToSetContent = super.setContent(content, actual, cardinal);
 		if (ableToSetContent && ((this.getContent()) instanceof Player) && interruptorActive()) {
-			this.getContent().getGame().setState(State.WIN);
+			Game.getInstance().setState(State.WIN);
 		}
 		return ableToSetContent;
 	}
 
 	public boolean interruptorActive() {
-		return (this.getContent().getGame().isInterruptorActive());
+		return (Game.getInstance().isInterruptorActive());
 	}
 
 }
