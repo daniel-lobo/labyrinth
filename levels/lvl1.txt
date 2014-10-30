@@ -1,0 +1,17 @@
+TTTTTTTTTTTTTTTTTT
+T@ TTTT####TT  ##T
+T   #######TT    T
+T B #######TT T  T
+T   ##  TT#TT T #T
+T B ###B T#TT T TT
+T  B### ###TT T TT
+T     #####TT T TT
+T  K###  ##TT T TT
+T TT###  G#TT#T TT
+T T     T TTT#T TT
+T T TTTTT TT  T TT
+T  B     #    T TT
+T  TTTTTTTTTTTT TT
+T       B   B   TT
+T   B     B     TT
+TTTTTTTTTTTTTTTTTT
