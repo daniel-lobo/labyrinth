@@ -2,7 +2,6 @@ package backend;
 
 import java.awt.Point;
 import java.io.Serializable;
-
 import backend.cell.Cell;
 import backend.cell.Interruptor;
 import backend.content.Content;
