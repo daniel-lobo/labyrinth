@@ -37,9 +37,9 @@ public class Game implements Serializable {
 		return game;
 	}
 	
-	public static Game createInstance(int width, int height){
+	public static Game createInstance(int height, int width){
 		if (game == null) {
-			game = new Game(width, height);
+			game = new Game(height, width);
 		}
 		return game;
 	}
